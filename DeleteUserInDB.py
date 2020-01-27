@@ -10,6 +10,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 mySql_delete_query = """DELETE from parking"""
-
+mySql_reset_query = "alter table Parking auto_increment = 1"
 mycursor.execute(mySql_delete_query)
+mycursor.execute(mySql_reset_query)
 mydb.commit()
